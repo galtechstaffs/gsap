@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/my-style.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
 </head>
 
 <body>
@@ -346,24 +344,24 @@
     </div>
 
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script type="text/javascript" src="js/gsap.js"></script>
-
-
 	
-    <script type="text/javascript">
+	<script>
 		$(".menu").on('click', function () {
 			var selector = $("body")
 	
 			if (selector.hasClass('open')) {
 				selector.removeClass('open');
-				selector.css('overflow', 'auto'); // Reset overflow to default
+				// selector.css('overflow-y', 'auto');
 			} else {
 				selector.addClass('open');
-				selector.css('overflow', 'hidden');
+				// selector.css('overflow-y', 'hidden');
 			}
 		});
 	</script>
-	
 
 	
 	
