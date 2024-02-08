@@ -217,7 +217,73 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // text type end
 
+        const right_rotate = document.querySelectorAll('.right-left-rotate');
 
+        right_rotate.forEach((element, i) => {
+            const screenWidth = window.innerWidth;
+
+            gsap.fromTo(
+                element,
+                {
+                    rotation: 15, // Initial rotation
+                    translateX: screenWidth <= 1024 ? 0 : 50, // Adjust translateX based on screen width
+                    translateY: 25,
+                    scale: screenWidth > 1024 ? 1.1 : 1 // Initial scale based on screen width
+                },
+                {
+                    duration: 0.3,
+                    y: 0,
+                    rotation: 0, // Final rotation
+                    translateX: 0, // Set translateX to 0 as the final value
+                    translateY: 0,
+                    scale: 1, // Final scale
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 60%',
+                        end: 'bottom 90%',
+                        scrub: true,
+                        markers: false,
+                        toggleActions: 'play play reverse reverse'
+                    }
+                }
+            );
+        });
+
+        
+        const left_rotate = document.querySelectorAll('.left-right-rotate');
+
+        left_rotate.forEach((element, i) => {
+            const screenWidth = window.innerWidth;
+        
+            gsap.fromTo(
+                element,
+                {
+                    rotation: -15, // Initial rotation
+                    translateX: screenWidth > 1024 ? -50 : 0, // Set translateX based on screen width
+                    translateY: 25,
+                    scale: screenWidth > 1024 ? 1.1 : 1 // Initial scale based on screen width
+                },
+                {
+                    duration: 0.3,
+                    y: 0,
+                    rotation: 0, // Final rotation
+                    translateX: 0, // Set translateX to 0 as the final value
+                    translateY: 0,
+                    scale: 1, // Final scale
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 60%',
+                        end: 'bottom 90%',
+                        scrub: true,
+                        markers: false,
+                        toggleActions: 'play play reverse reverse'
+                    }
+                }
+            );
+        });
+        
+        
+        
 
         // marquee start
 

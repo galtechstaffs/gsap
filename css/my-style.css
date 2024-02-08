@@ -70,7 +70,7 @@ img{
   .grow, .grow-small{
     transform: scale(4);
     background: white;
-    mix-blend-mode: difference; 
+    mix-blend-mode: difference!important; 
     border: none;
   }
   
