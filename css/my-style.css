@@ -321,6 +321,7 @@ a {
     border-radius: 25px;
     padding: 18px 30px;
     display: flex;
+    justify-content: center;
     height: 50px;
     gap:5px;
     align-items: center;
@@ -465,6 +466,21 @@ a {
 .hero2 {
     min-height: 50vh;
 }
+.hero-video {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+.hero-video video{
+    border-radius: 50px;
+}
+.hero-bottom {
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.hero-bottom .btn-site{
+    width: 45%;
+}
 }
 @media(max-width: 767px){
 .cr_space{
@@ -498,13 +514,7 @@ a {
     font-size: 2.5rem;
     line-height: 2.5rem;
 }
-.hero2 {
-    min-height: 30vh;
-}
-.hero-bottom {
-    flex-direction: column;
-    gap: 20px;
-}
+
 .hero-video {
     order: 3;
 }

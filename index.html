@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/my-style.css">
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -296,75 +298,69 @@
 				</div>
 			</div>
 		</div>
-		<div id="contact" class="contact cr_space">
-			<div class="contact-container">
-				<div class="contact-text">
-					<div class="contact-head cursor-scale">
-						<div  >Shaping the</div>
+		<div class="contact">
+			<div class=" cr_space">
+				<div class="contact-container">
+					<div class="contact-text">
+						<div class="cursor-scale">
+							<h1 class="reveal-type reveal-type2" data-bg-color="#434343" data-fg-color="#c3f9f9">Shaping </h1>
+							<h1 class="reveal-type reveal-type2" data-bg-color="#434343" data-fg-color="#c3f9f9">the future</h1>
+							<h1 class="reveal-type reveal-type2" data-bg-color="#434343" data-fg-color="#c3f9f9"> of Culture,</h1>
 
-						<div >
-							future of
-							
 						</div>
-						<div >
-							Culture,
-							<span class="nunum-font">today</span>
-						</div>
+						
 					</div>
-					
-					
+					<div class="contact-text2">
+						<div class="contact-head2">
+							<div  >Let's work
+								<span class="nunum-font">
+									together
+									
+								</span>
+							</div>
+						</div>
+						<div class="form" >
+							<input placeholder="NAME">
+							<input placeholder="Email">
+							<input placeholder="Your thoughts">
+
+
+						</div>
+						<a class="btn-site" > 
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9725 0C18.5803 0 23.945 5.36475 23.945 11.9725C23.945 18.5803 18.5803 23.945 11.9725 23.945C5.36475 23.945 0 18.5803 0 11.9725C0 5.36475 5.36475 0 11.9725 0ZM5.58717 12.7534V11.1916H15.3685L12.6667 8.48985L13.7708 7.38545L18.3579 11.9725L13.7708 16.5596L12.6667 15.4552L15.3685 12.7534H5.58717Z" fill="currentColor"></path>
+							</svg>
+							Send It
+						</a>
+					</div>
 				</div>
-				<div class="contact-text2">
-					<div class="contact-head2">
-						<div  >Let's work
-							<span class="nunum-font">
-								together
-								
-							</span>
-						</div>
-					</div>
-					<div class="form" >
-						<input placeholder="NAME">
-						<input placeholder="Email">
-						<input placeholder="Your thoughts">
-
-
-					</div>
-					<a class="btn-site" > 
-						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9725 0C18.5803 0 23.945 5.36475 23.945 11.9725C23.945 18.5803 18.5803 23.945 11.9725 23.945C5.36475 23.945 0 18.5803 0 11.9725C0 5.36475 5.36475 0 11.9725 0ZM5.58717 12.7534V11.1916H15.3685L12.6667 8.48985L13.7708 7.38545L18.3579 11.9725L13.7708 16.5596L12.6667 15.4552L15.3685 12.7534H5.58717Z" fill="currentColor"></path>
-						</svg>
-						Send It
-					</a>
-				</div>
+				<a class="w-100 mx-auto d-block mt-2" href="#header" style="transform:rotate(180deg);">
+					<img alt="Trionn" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" src="https://trionn.com/_next/static/media/move-down.31fd25f2.svg" style="color: transparent;">
+				</a>
 			</div>
-			<a class="w-100 mx-auto d-block mt-2" href="#header" style="transform:rotate(180deg);">
-				<img alt="Trionn" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" src="https://trionn.com/_next/static/media/move-down.31fd25f2.svg" style="color: transparent;">
-			</a>
 			
 			
 		</div>
     </div>
 
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script> -->
+    
     <script type="text/javascript" src="js/gsap.js"></script>
 	
 	<script>
-		$(".menu").on('click', function () {
-			var selector = $("body")
-	
-			if (selector.hasClass('open')) {
-				selector.removeClass('open');
-				// selector.css('overflow-y', 'auto');
+		document.querySelector(".menu").addEventListener('click', function () {
+			var selector = document.querySelector("body");
+		
+			if (selector.classList.contains('open')) {
+				selector.classList.remove('open');
+				// selector.style.overflowY = 'auto';
 			} else {
-				selector.addClass('open');
-				// selector.css('overflow-y', 'hidden');
+				selector.classList.add('open');
+				// selector.style.overflowY = 'hidden';
 			}
 		});
-	</script>
+	</script>		
+
 
 	
 	

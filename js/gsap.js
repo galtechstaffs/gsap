@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // scroll on top in loading
 
     // SplitText Animation
     var split = new SplitType(".main-head", { type: "chars" });
@@ -27,45 +29,31 @@
     createScrollAnimation(".out-btn", 0.5);
 
 
- 
-    function createScrollAnimation(element, startScale) {
-        gsap.to(element, {
-            scrollTrigger: {
-                trigger: element,
-                start: "top center",
-                end: "bottom top",
-                scrub: true,
-            },
-            scale: startScale,
-            duration: 0.8,
-        });
-    }
-    
-    if (window.innerWidth > 768) {
-        var contactHead = document.querySelector(".contact-head");
-        createScrollAnimation(contactHead, 1.5);
-    }
-    
 
     // Additional Scroll Animation with class toggling
     function createToggleClassScrollAnimation(element, startScale) {
-        var scaleValue = window.innerWidth < 991 ? 6 : startScale;
-    
-        gsap.to(element, {
-            scrollTrigger: {
-                trigger: element,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            },
-            scale: scaleValue,
-            duration: 0.8,
-            borderRadius: "20px",
-            transformOrigin: "top"
-        });
+        if (window.innerWidth > 990) {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                },
+                scale: startScale,
+                duration: 0.8,
+                borderRadius: "20px",
+                transformOrigin: "top"
+            });
+        } else {
+            // If the screen size is smaller than or equal to 990 pixels,
+            // set the scale to 1 to prevent scaling effect.
+            gsap.set(element, { scale: 1 });
+        }
     }
     
     createToggleClassScrollAnimation(".hero-video video", 16);
+    
     
 
 
@@ -75,6 +63,39 @@
     const revealTypes = document.querySelectorAll('.reveal-type')
 	
 		revealTypes.forEach((element, i) => {
+	
+			const bg = element.dataset.bgColor;
+			const fg = element.dataset.fgColor;
+
+            let xValue = 100;
+            if (window.innerWidth < 768) {
+                xValue = 20;
+            }
+            
+			gsap.fromTo(element,
+				{
+					color: bg,
+					x: i % 2 === 0 ? -xValue : xValue,
+					opacity: 0,
+				},
+				{
+					color: fg,
+					duration: 0.9,
+					x: 0,
+					opacity: 1,
+					scrollTrigger: {
+						trigger: element,
+						start: 'top 90%',
+						end: 'top 10%',
+						scrub: true,
+						markers: false,
+						toggleActions: 'play play reverse reverse'
+					}
+				})
+		});
+        const revealTypes2 = document.querySelectorAll('.reveal-type2')
+	
+		revealTypes2.forEach((element, i) => {
 	
 			const bg = element.dataset.bgColor
 			const fg = element.dataset.fgColor
@@ -92,7 +113,7 @@
 					opacity: 1,
 					scrollTrigger: {
 						trigger: element,
-						start: 'top 90%',
+						start: 'top 10%',
 						end: 'top 10%',
 						scrub: true,
 						markers: false,
@@ -189,98 +210,7 @@
                     }
                 })
         });
-        const right_rotate = document.querySelectorAll('.right-left-rotate');
-
-        right_rotate.forEach((element, i) => {
-            const screenWidth = window.innerWidth;
-        
-            gsap.fromTo(
-                element,
-                {
-                    rotation: 15, // Initial rotation
-                    translateX: 50,
-                    translateY: 25,
-                    scale: screenWidth > 1024 ? 1.1 : 1 // Initial scale based on screen width
-                },
-                {
-                    duration: 0.3,
-                    y: 0,
-                    rotation: 0, // Final rotation
-                    translateX: 0,
-                    translateY: 0,
-                    scale: 1, // Final scale
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 60%',
-                        end: 'bottom 90%',
-                        scrub: true,
-                        markers: false,
-                        toggleActions: 'play play reverse reverse'
-                    }
-                }
-            );
-        
-            if (screenWidth <= 1024) {
-                gsap.to(element, {
-                    scale: 1, // Final scale if screen width is less than or equal to 1024 pixels
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 60%',
-                        end: 'bottom 90%',
-                        scrub: true,
-                        markers: false,
-                        toggleActions: 'play play reverse reverse'
-                    }
-                });
-            }
-        });
-        
-        const left_rotate = document.querySelectorAll('.left-right-rotate');
-
-        left_rotate.forEach((element, i) => {
-            const screenWidth = window.innerWidth;
-        
-            gsap.fromTo(
-                element,
-                {
-                    rotation: -15, // Initial rotation
-                    translateX: -50,
-                    translateY: 25,
-                    scale: screenWidth > 1024 ? 1.1 : 1 // Initial scale based on screen width
-                },
-                {
-                    duration: 0.3,
-                    y: 0,
-                    rotation: 0, // Final rotation
-                    translateX: 0,
-                    translateY: 0,
-                    scale: 1, // Final scale
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 60%',
-                        end: 'bottom 90%',
-                        scrub: true,
-                        markers: false,
-                        toggleActions: 'play play reverse reverse'
-                    }
-                }
-            );
-        
-            if (screenWidth <= 1024) {
-                gsap.to(element, {
-                    scale: 1, // Final scale if screen width is less than or equal to 1024 pixels
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 60%',
-                        end: 'bottom 90%',
-                        scrub: true,
-                        markers: false,
-                        toggleActions: 'play play reverse reverse'
-                    }
-                });
-            }
-        });
-        
+       
         
         
 
@@ -357,3 +287,5 @@
         // cursor end
 
         
+
+    });
