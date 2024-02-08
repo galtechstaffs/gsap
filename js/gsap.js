@@ -121,6 +121,36 @@ document.addEventListener("DOMContentLoaded", function() {
 					}
 				})
 		});
+        
+        gsap.registerPlugin(ScrollTrigger)
+
+        const splitTypes3 = document.querySelectorAll('.reveal-type3')
+
+        splitTypes3.forEach((char,i) => {
+
+            const bg = char.dataset.bgColor
+            const fg = char.dataset.fgColor
+
+            const text = new SplitType(char, { types: 'chars'})
+
+            gsap.fromTo(text.chars, 
+                {
+                    color: bg,
+                },
+                {
+                    color: fg,
+                    duration: 1,
+                    stagger: 0.8,
+                    scrollTrigger: {
+                        trigger: char,
+                        start: 'top 50%',
+                        end: 'top 0%',
+                        scrub: true,
+                        markers: false,
+                        toggleActions: 'play play reverse reverse'
+                    }
+            })
+        })
 
         const top_action = document.querySelectorAll('.top-action')
 
