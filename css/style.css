@@ -59,7 +59,7 @@
 
 @keyframes sidebar1 {
     0%{height:0;border-radius: 100px;}
-    50%{height:0;}
+
 
     100%{height:50%;border-radius: 0;}
 
@@ -298,6 +298,12 @@
     }
   
     /* hero end */
+    .hero.first, .hero.second{
+        min-height:auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+    }
 .first .left{
     padding-right: 50px;
 }
@@ -308,6 +314,12 @@
     align-items: end;
     width: fit-content;
     place-items: flex-start;
+}
+.hero .left{
+    width: 600px;
+}
+.hero .right{
+    width: calc(100% - 600px);
 }
     .right img{
         width: 100%;
@@ -489,10 +501,11 @@
 .contact {
     position: relative;
     height: 100%;
-    padding: 2%;
     overflow: hidden;
-    padding-top: 20vh;
-    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    /* min-height: 100vh; */
     
 
 }

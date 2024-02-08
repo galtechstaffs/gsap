@@ -362,13 +362,43 @@ a {
     font-size: 100px;
     line-height: 120px;
    }
-   
+   .hero .left{
+    width: 400px;
+}
+.hero .right{
+    width: calc(100% - 400px);
+}
+.main-head2 {
+    font-size: 62px;
+    line-height: 62px;
+}
+.hero-video {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+.hero-video video{
+    border-radius: 50px;
+}
+.hero-bottom {
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.hero-bottom .btn-site{
+    width: 45%;
+}
+.hero-video {
+    order: 3;
+}
+.hero2 {
+    position: relative;
+}
 }
 @media(max-width: 1024px){
 
     .main-head, .main-head2 { 
-        font-size:60px;
-         line-height:60px;
+        font-size:50px;
+         line-height:50px;
     
         }
         .reveal-type {
@@ -390,6 +420,10 @@ a {
         .col-by-3{
             padding-left: 10%;
             padding-right: 10%;
+
+        }
+        .hero {
+            min-height:auto;
 
         }
 }
@@ -445,9 +479,7 @@ a {
     width: 25px;
     height: 25px;
 }
-.services{
-    padding-bottom: 300px;
-}
+
 .services .about-shap2 img {
    bottom: -50px;
     height: 500px;
@@ -466,20 +498,9 @@ a {
 .hero2 {
     min-height: 50vh;
 }
-.hero-video {
+.hero .right, .hero .left {
+
     width: 100%;
-    height: 100%;
-    margin-top: 50px;
-}
-.hero-video video{
-    border-radius: 50px;
-}
-.hero-bottom {
-    flex-wrap: wrap;
-    row-gap: 20px;
-}
-.hero-bottom .btn-site{
-    width: 45%;
 }
 }
 @media(max-width: 767px){
@@ -515,9 +536,7 @@ a {
     line-height: 2.5rem;
 }
 
-.hero-video {
-    order: 3;
-}
+
 .hero2{
     position: relative;
 }

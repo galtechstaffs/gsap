@@ -88,13 +88,13 @@
         </div>
 		<div class="hero first">
 			<div class="cr_space mx-auto flex-align  "> 
-				<div class="w-50 left top-action">
+				<div class=" left top-action">
 					<h1 class="main-head2 cursor-scale">LEFTLOOM</h1>
 					
 					<div class="sub-head2 cursor-scale small">UI Design, UX, Wireframe</div>
 					<a class="btn-site mt-6 cursor-scale small">View Project</a>
 				</div>
-				<div class="w-50 right cursor-scale">
+				<div class=" right cursor-scale">
 					<img src="https://trionn.com/assets/images/works/loftloom/loftloom-main-landscape.webp"  class="right-left-rotate">
 				</div>
 			</div>
@@ -102,10 +102,10 @@
 		<div class="hero second">
 			<div class="cr_space mx-auto flex-align "> 
 				
-				<div class="w-50 right cursor-scale">
+				<div class=" right cursor-scale">
 					<img src="https://trionn.com/assets/images/works/imusic/imusic-main-landscape.webp" class="left-right-rotate">
 				</div>
-				<div class="w-50 left top-action2">
+				<div class=" left top-action2">
 					<h1 class="main-head2  cursor-scale"  >IMUSIC</h1>
 					
 					<div class="sub-head2 cursor-scale small">Research UI, UX  Design</div>
@@ -115,13 +115,13 @@
 		</div>
 		<div class="hero first">
 			<div class="cr_space mx-auto flex-align  "> 
-				<div class="w-50 left top-action3">
+				<div class=" left top-action3">
 					<h1 class="main-head2 cursor-scale">TECHNIS</h1>
 					
 					<div class="sub-head2 cursor-scale small">UI, UX Design	 development</div>
 					<a class="btn-site mt-6 cursor-scale small">View Project</a>
 				</div>
-				<div class="w-50 right cursor-scale small">
+				<div class=" right cursor-scale small">
 					<img src="https://trionn.com/assets/images/works/technis/technis-main-landscape.webp"  class="right-left-rotate">
 				</div>
 			</div>
@@ -363,7 +363,25 @@
 		});
 	</script>		
 
-
+	<script>
+		window.onload = function() {
+			var isResponsiveMode = false;
+		
+			function checkResponsiveMode() {
+				var viewportWidth = window.innerWidth;
+				var isNowResponsive = viewportWidth < 768; // Change this value according to your responsive breakpoint
+		
+				if (isNowResponsive && !isResponsiveMode) {
+					location.reload(); // Reload the page if entering responsive mode
+					isResponsiveMode = true;
+				} else {
+					isResponsiveMode = false;
+				}
+			}
+		
+			window.addEventListener('resize', checkResponsiveMode);
+		};
+		</script>
 	
 	
 	
