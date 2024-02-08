@@ -521,7 +521,11 @@ a {
 .hero2{
     position: relative;
 }
+.cursor{
+    display: none;
 }
+}
+
 
 
 

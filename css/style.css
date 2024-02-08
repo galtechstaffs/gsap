@@ -33,10 +33,11 @@
     transform: translateX(-50%);
     justify-content: flex-start;
     transition: .3s;
-    padding-top: 120px;
+    padding-top: 24vh;
     z-index: 9;
 
 }
+
 
 .header-right:before{
     content: '';
@@ -579,3 +580,7 @@
 /* contcatcs start */
 /* contacts end */
 
+.reveal-type2 {
+    font-size: 96px;
+    font-weight: bold;
+}
