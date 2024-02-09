@@ -47,21 +47,15 @@
     width: 100%;
     height: 50%;
     background-color: #121315;
-    border-radius: 0px;
 
 
 }
-.open .header-right:before{
-    animation: sidebar1 .8s;
-
-}
-
 
 @keyframes sidebar1 {
-    0%{height:0;border-radius: 100px;}
+    0%{height:0;}
 
 
-    100%{height:50%;border-radius: 0;}
+    100%{height:50%;}
 
 
     
@@ -75,10 +69,9 @@
     height: 50%;
     background-color: #121315;
     z-index: -1;
-    border-radius: 40px;
 
 }
-.open .header-right:after{
+.open .header-right:after, .open .header-right:before{
     animation: sidebar1 .8s;
 
 }
@@ -111,7 +104,7 @@
 
 @keyframes nav {
     0% {top: -500px;}
-60% {top: -500px;}
+
 
     100% {top: 0;}
 }

@@ -365,23 +365,25 @@
 
 	<script>
 		window.onload = function() {
-			var isResponsiveMode = false;
-		
+			var isResponsiveMode = localStorage.getItem('isResponsiveMode') === 'true' || false;
+	
 			function checkResponsiveMode() {
 				var viewportWidth = window.innerWidth;
-				var isNowResponsive = viewportWidth < 768; // Change this value according to your responsive breakpoint
-		
+				var isNowResponsive = viewportWidth < 768;
+	
 				if (isNowResponsive && !isResponsiveMode) {
-					location.reload(); // Reload the page if entering responsive mode
+					location.reload();
 					isResponsiveMode = true;
 				} else {
 					isResponsiveMode = false;
 				}
+				localStorage.setItem('isResponsiveMode', isResponsiveMode);
 			}
-		
 			window.addEventListener('resize', checkResponsiveMode);
+			checkResponsiveMode();
 		};
-		</script>
+	</script>
+	
 	
 	
 	

@@ -540,8 +540,17 @@ a {
 .hero2{
     position: relative;
 }
+.hero-bottom {
+    position: relative;
+}
 .cursor{
     display: none;
+}
+.main-head2 {
+    font-size: 40px;
+}
+.sub-head2 {
+    font-size: 16px;
 }
 }
 
